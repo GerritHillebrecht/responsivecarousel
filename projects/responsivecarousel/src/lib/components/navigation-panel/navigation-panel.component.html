@@ -1,0 +1,24 @@
+<div class="media-navigation mobile" *ngIf="rcService.isHandset$ | async">
+    <div class="media-navigation__indicator"
+        [ngStyle]="{ width: 100 / media!.length + '%', transform: mobileScrollPosition }">
+    </div>
+</div>
+
+<div class="media-navigation desktop" *ngIf="!(rcService.isHandset$ | async)">
+    <!-- Arrow left -->
+    <div class="media-navigation__arrow">
+        <rc-navigation-arrow direction="back" *ngIf="showArrows.back"></rc-navigation-arrow>
+    </div>
+
+    <!-- Navbar Viewport -->
+    <div class="media-navigation__viewport-wrapper">
+        <rc-navigation-viewport style="position: relative; width: 100%; max-width: 100%;" #mediaNavigationViewport
+            [media]="media">
+        </rc-navigation-viewport>
+    </div>
+
+    <!-- Arrow right -->
+    <div class="media-navigation__arrow">
+        <rc-navigation-arrow direction="forward" *ngIf="showArrows.forward"></rc-navigation-arrow>
+    </div>
+</div>

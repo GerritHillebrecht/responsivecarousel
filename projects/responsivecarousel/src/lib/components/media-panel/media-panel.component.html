@@ -1,0 +1,13 @@
+<div class="media-panel" #mediaPanel>
+    <div
+        [ngStyle]="{'grid-auto-columns': viewportSize + 'px', width: viewportSize + 'px' }"
+        class="media-panel__viewport"
+    >
+        <rc-media-panel-item class="media-panel__item" 
+            [ngClass]="{snapping: contentRendered}"
+            *ngFor="let item of media, trackBy: identify, let i = index"
+        >
+            <rc-media-panel-image *ngIf="item.type === 'image'" [image]="item"></rc-media-panel-image>
+        </rc-media-panel-item>
+    </div>
+</div>

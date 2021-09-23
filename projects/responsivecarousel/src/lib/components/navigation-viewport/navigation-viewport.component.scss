@@ -1,0 +1,52 @@
+.media-navigation__viewport {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.media-navigation__scroll-wrapper {
+    width: 100%;
+    display: grid;
+    grid-auto-columns: 150px;
+    grid-auto-flow: column;
+}
+
+.media-navigation__image-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-snap-align: start end;
+    scroll-snap-stop: always;
+    padding: 0.5rem;
+}
+
+.media-navigation__image-box {
+    position: relative;
+    border: 1px solid rgb(207, 203, 202);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+
+    &.highlighted {
+        border-color: red;
+    }
+
+    img {
+        position: relative;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+}

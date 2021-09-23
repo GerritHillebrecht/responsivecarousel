@@ -1,0 +1,39 @@
+.media-navigation {
+    --carousel-navigation-height: 2px;
+
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+
+    &.mobile {
+        height: var(--carousel-navigation-height);
+        background-color: rgb(227, 225, 224);
+    }
+
+    &__indicator {
+        transition: 0.2s all;
+        height: 200%;
+        background-color: rgb(223, 0, 0);
+        transform: translateX(0);
+    }
+
+    &.desktop {
+        display: grid;
+        grid-template-columns: max-content auto max-content;
+    }
+
+    &__viewport-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__arrow {
+        width: 50px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

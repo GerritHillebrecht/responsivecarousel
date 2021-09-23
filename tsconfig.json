@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "responsivecarousel": [
+        "dist/responsivecarousel/responsivecarousel",
+        "dist/responsivecarousel"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [

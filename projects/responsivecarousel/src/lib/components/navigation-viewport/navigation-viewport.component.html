@@ -1,0 +1,12 @@
+<div #mediaNavigationViewport class="media-navigation__viewport">
+    <div class="media-navigation__scroll-wrapper" *ngIf="rcService.itemsPerPage$ | async as itemsPerPage">
+        <div *ngFor="let item of media, let index = index"
+            [ngStyle]="{ height: (mediaNavigationViewport.offsetWidth / itemsPerPage) * 0.7 + 'px' }"
+            class="media-navigation__image-container">
+            <div class="media-navigation__image-box"
+                [ngClass]="{highlighted: index === (rcService.currentIndex$ | async)}" (click)="navItemClicked(index)">
+                <img [src]="item.path">
+            </div>
+        </div>
+    </div>
+</div>
